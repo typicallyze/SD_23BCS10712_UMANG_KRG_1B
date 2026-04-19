@@ -1,0 +1,121 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" version="29.6.6">
+  <diagram name="Page-1" id="KmGayXad_n3V6G_vLnr3">
+    <mxGraphModel dx="1880" dy="1231" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="note_scale" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;spacing=10;fontColor=#333333;" value="&lt;b style=&quot;font-size:14px;&quot;&gt;Target Scale: 100M DAU&lt;/b&gt;&lt;br&gt;Achieved via CDN caching, Load balancing,&lt;br&gt;Read/Write splitting (CQRS), and heavy Redis usage." vertex="1">
+          <mxGeometry height="70" width="350" x="30" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="note_ha" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=2;fontColor=#1E88E5;" value="&lt;b&gt;CAP Theorem: AP&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;Prioritizes High Availability.&lt;br&gt;Stale cache data is acceptable.&lt;/font&gt;" vertex="1">
+          <mxGeometry height="50" width="200" x="780" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="note_hc" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=2;fontColor=#E53935;" value="&lt;b&gt;CAP Theorem: CP&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;Prioritizes High Consistency.&lt;br&gt;Uses Distributed Locks / DB row-locking.&lt;/font&gt;" vertex="1">
+          <mxGeometry height="50" width="220" x="780" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="user" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;" value="&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;width:100%;height:100%;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; valign=&quot;middle&quot;&gt;&lt;img src=&quot;img/lib/mscae/Person.svg&quot; width=&quot;50&quot; height=&quot;50&quot;/&gt;&lt;br/&gt;&lt;b&gt;User&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;(Web / Mobile)&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="100" width="100" x="30" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="cdn" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;arcSize=10;" value="&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;width:100%;height:100%;&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td width=&quot;60&quot; align=&quot;center&quot; valign=&quot;middle&quot;&gt;&lt;br&gt;&lt;/td&gt;&lt;td align=&quot;left&quot; valign=&quot;middle&quot;&gt;&lt;b&gt;CDN &amp;amp; WAF&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;Static Content &amp;amp; Security&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="70" width="220" x="180" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="api_gw" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;arcSize=10;" value="&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;width:100%;height:100%;&quot;&gt;&lt;tr&gt;&lt;td width=&quot;60&quot; align=&quot;center&quot; valign=&quot;middle&quot;&gt;&lt;img src=&quot;img/lib/mscae/API_Management.svg&quot; width=&quot;40&quot; height=&quot;40&quot;/&gt;&lt;/td&gt;&lt;td align=&quot;left&quot; valign=&quot;middle&quot;&gt;&lt;b&gt;API Gateway / LB&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;Rate Limiting, Auth, Routing&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="70" width="220" x="460" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="svc_search" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;arcSize=10;" value="&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;width:100%;height:100%;&quot;&gt;&lt;tr&gt;&lt;td width=&quot;60&quot; align=&quot;center&quot; valign=&quot;middle&quot;&gt;&lt;img src=&quot;img/lib/mscae/App_Services.svg&quot; width=&quot;36&quot; height=&quot;36&quot;/&gt;&lt;/td&gt;&lt;td align=&quot;left&quot; valign=&quot;middle&quot;&gt;&lt;b&gt;Search Service&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;Highly Available&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="70" width="220" x="780" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="svc_event" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;arcSize=10;" value="&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;width:100%;height:100%;&quot;&gt;&lt;tr&gt;&lt;td width=&quot;60&quot; align=&quot;center&quot; valign=&quot;middle&quot;&gt;&lt;img src=&quot;img/lib/mscae/App_Services.svg&quot; width=&quot;36&quot; height=&quot;36&quot;/&gt;&lt;/td&gt;&lt;td align=&quot;left&quot; valign=&quot;middle&quot;&gt;&lt;b&gt;Event Catalog Service&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;Highly Available&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="70" width="220" x="780" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="svc_booking" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=2;arcSize=10;" value="&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;width:100%;height:100%;&quot;&gt;&lt;tr&gt;&lt;td width=&quot;60&quot; align=&quot;center&quot; valign=&quot;middle&quot;&gt;&lt;img src=&quot;img/lib/mscae/App_Services.svg&quot; width=&quot;36&quot; height=&quot;36&quot;/&gt;&lt;/td&gt;&lt;td align=&quot;left&quot; valign=&quot;middle&quot;&gt;&lt;b&gt;Booking Service&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;Highly Consistent (CP)&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="70" width="220" x="780" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="svc_payment" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;arcSize=10;" value="&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;width:100%;height:100%;&quot;&gt;&lt;tr&gt;&lt;td width=&quot;60&quot; align=&quot;center&quot; valign=&quot;middle&quot;&gt;&lt;img src=&quot;img/lib/clip_art/finance/Credit_Card_128x128.png&quot; width=&quot;36&quot; height=&quot;36&quot;/&gt;&lt;/td&gt;&lt;td align=&quot;left&quot; valign=&quot;middle&quot;&gt;&lt;b&gt;Payment Service&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;Secure Txn Execution&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="70" width="220" x="780" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="db_es" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;arcSize=10;" value="&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;width:100%;height:100%;&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td width=&quot;60&quot; align=&quot;center&quot; valign=&quot;middle&quot;&gt;&lt;br&gt;&lt;/td&gt;&lt;td align=&quot;left&quot; valign=&quot;middle&quot;&gt;&lt;b&gt;Elasticsearch&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;Fast Query: Title, City, Date&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="70" width="220" x="1140" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="cache_redis" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;arcSize=10;" value="&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;width:100%;height:100%;&quot;&gt;&lt;tr&gt;&lt;td width=&quot;60&quot; align=&quot;center&quot; valign=&quot;middle&quot;&gt;&lt;img src=&quot;img/lib/mscae/Cache_Redis_Product.svg&quot; width=&quot;36&quot; height=&quot;36&quot;/&gt;&lt;/td&gt;&lt;td align=&quot;left&quot; valign=&quot;middle&quot;&gt;&lt;b&gt;Redis Cache&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;Event Info &amp;amp; Seat Availability&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="70" width="220" x="1140" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="db_master" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;strokeWidth=2;arcSize=10;" value="&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;width:100%;height:100%;&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td width=&quot;60&quot; align=&quot;center&quot; valign=&quot;middle&quot;&gt;&lt;br&gt;&lt;/td&gt;&lt;td align=&quot;left&quot; valign=&quot;middle&quot;&gt;&lt;b&gt;Primary DB (Postgres)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;Source of Truth (ACID)&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="70" width="220" x="1140" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="db_replica" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;arcSize=10;" value="&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;width:100%;height:100%;&quot;&gt;&lt;tr&gt;&lt;td width=&quot;60&quot; align=&quot;center&quot; valign=&quot;middle&quot;&gt;&lt;img src=&quot;img/lib/mscae/Database_General.svg&quot; width=&quot;36&quot; height=&quot;36&quot;/&gt;&lt;/td&gt;&lt;td align=&quot;left&quot; valign=&quot;middle&quot;&gt;&lt;b&gt;Read Replicas DB&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;Scale Reads for Event Info&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="70" width="220" x="1140" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="kafka" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;arcSize=10;" value="&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;width:100%;height:100%;&quot;&gt;&lt;tr&gt;&lt;td width=&quot;60&quot; align=&quot;center&quot; valign=&quot;middle&quot;&gt;&lt;img src=&quot;img/lib/mscae/Event_Hubs.svg&quot; width=&quot;36&quot; height=&quot;36&quot;/&gt;&lt;/td&gt;&lt;td align=&quot;left&quot; valign=&quot;middle&quot;&gt;&lt;b&gt;Message Queue&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;Kafka / RabbitMQ&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="70" width="220" x="1140" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="workers" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;arcSize=10;" value="&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;width:100%;height:100%;&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td width=&quot;60&quot; align=&quot;center&quot; valign=&quot;middle&quot;&gt;&lt;br&gt;&lt;/td&gt;&lt;td align=&quot;left&quot; valign=&quot;middle&quot;&gt;&lt;b&gt;Data Sync Workers&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;Update Caches &amp;amp; Search Index&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="70" width="220" x="1480" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="svc_notification" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;arcSize=10;" value="&lt;table cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; style=&quot;width:100%;height:100%;&quot;&gt;&lt;tr&gt;&lt;td width=&quot;60&quot; align=&quot;center&quot; valign=&quot;middle&quot;&gt;&lt;img src=&quot;img/lib/clip_art/networking/Email_128x128.png&quot; width=&quot;36&quot; height=&quot;36&quot;/&gt;&lt;/td&gt;&lt;td align=&quot;left&quot; valign=&quot;middle&quot;&gt;&lt;b&gt;Notification Service&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:11px;&quot;&gt;Send SMS / Email Tickets&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="70" width="220" x="1475" y="807" as="geometry" />
+        </mxCell>
+        <mxCell id="e_user_cdn" edge="1" parent="1" source="user" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#333333;strokeWidth=1.5;" target="cdn">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_cdn_api" edge="1" parent="1" source="cdn" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#333333;strokeWidth=1.5;" target="api_gw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_api_search" edge="1" parent="1" source="api_gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.25;entryX=0;entryY=0.5;strokeColor=#1E88E5;labelBackgroundColor=#ffffff;" target="svc_search" value="Search">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_api_event" edge="1" parent="1" source="api_gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#1E88E5;labelBackgroundColor=#ffffff;" target="svc_event" value="View Event">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_api_book" edge="1" parent="1" source="api_gw" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.75;entryX=0;entryY=0.5;strokeColor=#E53935;strokeWidth=2;fontColor=#E53935;fontStyle=1;labelBackgroundColor=#ffffff;" target="svc_booking" value="Book Ticket">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_search_es" edge="1" parent="1" source="svc_search" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#43A047;" target="db_es">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_event_redis" edge="1" parent="1" source="svc_event" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#43A047;labelBackgroundColor=#ffffff;" target="cache_redis" value="Cache Hit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_book_redis" edge="1" parent="1" source="svc_booking" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.25;entryX=0;entryY=0.75;dashed=1;strokeColor=#E53935;strokeWidth=2;fontColor=#E53935;fontStyle=1;labelBackgroundColor=#ffffff;" target="cache_redis" value="Acquire Seat Lock">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_book_master" edge="1" parent="1" source="svc_booking" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#E53935;strokeWidth=2;fontColor=#E53935;fontStyle=1;labelBackgroundColor=#ffffff;" target="db_master" value="ACID Txn">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_book_pay" edge="1" parent="1" source="svc_booking" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#8E24AA;strokeWidth=1.5;" target="svc_payment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_book_kafka" edge="1" parent="1" source="svc_booking" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.75;entryX=0;entryY=0.5;strokeColor=#FFB300;strokeWidth=1.5;labelBackgroundColor=#ffffff;" target="kafka" value="Publish Event">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_master_replica" edge="1" parent="1" source="db_master" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;dashed=1;strokeColor=#43A047;labelBackgroundColor=#ffffff;" target="db_replica" value="Async DB Replication">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_kafka_notify" edge="1" parent="1" source="kafka" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#8E24AA;strokeWidth=1.5;labelBackgroundColor=#ffffff;" target="svc_notification" value="Send Ticket">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_kafka_workers" edge="1" parent="1" source="kafka" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.25;entryX=0.5;entryY=1;strokeColor=#8E24AA;strokeWidth=1.5;labelBackgroundColor=#ffffff;" target="workers" value="Consume">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_workers_es" edge="1" parent="1" source="workers" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0;exitY=0.25;entryX=1;entryY=0.5;dashed=1;strokeColor=#666666;labelBackgroundColor=#ffffff;" target="db_es" value="Update Index">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_workers_redis" edge="1" parent="1" source="workers" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0;exitY=0.75;entryX=1;entryY=0.5;dashed=1;strokeColor=#666666;labelBackgroundColor=#ffffff;" target="cache_redis" value="Invalidate Cache">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wtZzo_9YblyZg3nHwyiQ-1" parent="1" style="points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.cdn_content_distribution_network;" value="" vertex="1">
+          <mxGeometry height="42.3" width="51" x="195" y="307.7" as="geometry" />
+        </mxCell>
+        <mxCell id="wtZzo_9YblyZg3nHwyiQ-2" parent="1" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.elasticsearch_service;fillColor=#F58534;gradientColor=none;" value="" vertex="1">
+          <mxGeometry height="81" width="67.5" x="1144" y="89" as="geometry" />
+        </mxCell>
+        <mxCell id="wtZzo_9YblyZg3nHwyiQ-3" parent="1" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/Azure_Database_PostgreSQL_Server.svg;" value="" vertex="1">
+          <mxGeometry height="64" width="48" x="1153.75" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="wtZzo_9YblyZg3nHwyiQ-4" parent="1" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.communications.exchange_active_sync;fillColor=#2072B8;" value="" vertex="1">
+          <mxGeometry height="49" width="49" x="1490" y="183" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
